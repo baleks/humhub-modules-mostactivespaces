@@ -1,0 +1,13 @@
+{
+    "id": "mostactivespaces",
+    "name": "Most Active Spaces Widget",
+    "description": "Adds a panel on the Dashboard, indicating the most active spaces based on space posts count.",
+    "keywords": [
+        "most", "active", "spaces", "widget", "dashboard"
+    ],
+    "version": "0.1",
+    "humhub": {
+        "minVersion": "1.2"
+    },
+    "screenshots": ["assets/screen1.jpg"]
+}
