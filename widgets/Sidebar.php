@@ -7,6 +7,7 @@ use Yii;
 
 class Sidebar extends \humhub\components\Widget
 {
+
     public function run()
     {
         $module = Yii::$app->getModule('mostactivespaces');
@@ -15,6 +16,5 @@ class Sidebar extends \humhub\components\Widget
                     'spaces' => $spaces
         ]);
     }
-}
 
-?>
+}

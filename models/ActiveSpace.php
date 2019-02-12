@@ -19,4 +19,5 @@ class ActiveSpace extends \humhub\modules\space\models\Space
         $query->orderBy('(count_posts) DESC');
         return $query;
     }
+
 }

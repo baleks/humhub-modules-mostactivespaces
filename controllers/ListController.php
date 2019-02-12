@@ -7,6 +7,7 @@ use humhub\components\Controller;
 
 class ListController extends Controller
 {
+
     public $pageSize = 10;
 
     /**
