@@ -1,6 +1,8 @@
 <?php
 
 use yii\helpers\Html;
+use humhub\widgets\AjaxLinkPager;
+
 ?>
 <div class="modal-dialog modal-dialog-normal animated fadeIn">
     <div class="modal-content">
@@ -51,7 +53,7 @@ use yii\helpers\Html;
         </ul>
         <div class="modal-footer" style="padding: 5px">
             <div class="pagination-container">
-                <?= \humhub\widgets\AjaxLinkPager::widget(['pagination' => $pagination]); ?>
+                <?= AjaxLinkPager::widget(['pagination' => $pagination]); ?>
             </div>
         </div>
     </div>
