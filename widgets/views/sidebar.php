@@ -1,8 +1,9 @@
 <?php
 
 use yii\helpers\Html;
+use humhub\modules\mostactivespaces\assets\Assets;
 
-Baleks\humhub\modules\mostactivespaces\assets\Assets::register($this);
+Assets::register($this);
 ?>
 <div class="panel panel-default" id="mostactivespaces-panel">
 
