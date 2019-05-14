@@ -1,8 +1,8 @@
 <?php
 
-namespace Baleks\humhub\modules\mostactivespaces\controllers;
+namespace humhub\modules\mostactivespaces\controllers;
 
-use Baleks\humhub\modules\mostactivespaces\models\ConfigForm;
+use humhub\modules\mostactivespaces\models\ConfigForm;
 use humhub\modules\admin\components\Controller;
 use Yii;
 

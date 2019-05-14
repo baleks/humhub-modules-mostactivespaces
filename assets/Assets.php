@@ -1,6 +1,6 @@
 <?php
 
-namespace  Baleks\humhub\modules\mostactivespaces\assets;
+namespace  humhub\modules\mostactivespaces\assets;
 
 use yii\web\AssetBundle;
 

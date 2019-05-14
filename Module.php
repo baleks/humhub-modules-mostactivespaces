@@ -1,9 +1,10 @@
 <?php
 
-namespace Baleks\humhub\modules\mostactivespaces;
+namespace humhub\modules\mostactivespaces;
 
 use Yii;
 use yii\helpers\Url;
+use humhub\models\Setting;
 
 class Module extends \humhub\components\Module
 {
@@ -17,6 +18,20 @@ class Module extends \humhub\components\Module
     }
 
     /**
+     * On build of the dashboard sidebar widget, add the mostactivespaces widget if module is enabled.
+     *
+     * @param type $event            
+     */
+    public static function onSidebarInit($event)
+    {
+        if (Yii::$app->hasModule('mostactivespaces')) {
+            $event->sender->addWidget(widgets\Sidebar::class, [], [
+                'sortOrder' => 400
+            ]);
+        }
+    }
+
+    /**
      * @inheritdoc
      */
     public function enable()
@@ -24,8 +39,8 @@ class Module extends \humhub\components\Module
         parent::enable();
 
         $module = Yii::$app->getModule('mostactivespaces');
-        if (! $module->settings->get('spaces_count')) {
-            $module->settings->set('spaces_count', 5);
+        if (! $module->Settings::Set('spaces_count')) {
+            $module->Settings::Set('spaces_count', 5);
         }
     }
 

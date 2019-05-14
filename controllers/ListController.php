@@ -1,9 +1,11 @@
 <?php
 
-namespace Baleks\humhub\modules\mostactivespaces\controllers;
+namespace humhub\modules\mostactivespaces\controllers;
 
-use Baleks\humhub\modules\mostactivespaces\models\ActiveSpace;
+use humhub\modules\mostactivespaces\models\ActiveSpace;
+use humhub\components\behaviors\AccessControl;
 use humhub\components\Controller;
+use yii\data\Pagination;
 
 class ListController extends Controller
 {
@@ -17,7 +19,7 @@ class ListController extends Controller
     {
         return [
             'acl' => [
-                'class' => \humhub\components\behaviors\AccessControl::class,
+                'class' => AccessControl::class,
                 'guestAllowedActions' => ['list']
             ]
         ];
@@ -31,7 +33,7 @@ class ListController extends Controller
         $query = ActiveSpace::find();
 
         $countQuery = clone $query;
-        $pagination = new \yii\data\Pagination(['totalCount' => $countQuery->count(), 'pageSize' => $this->pageSize]);
+        $pagination = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => $this->pageSize]);
         $query->offset($pagination->offset)->limit($pagination->limit);
 
         return $this->renderAjax('index', [

@@ -1,6 +1,6 @@
 <?php
 
-namespace Baleks\humhub\modules\mostactivespaces\models;
+namespace humhub\modules\mostactivespaces\models;
 
 class ActiveSpace extends \humhub\modules\space\models\Space
 {
